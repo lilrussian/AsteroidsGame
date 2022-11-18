@@ -1,12 +1,18 @@
  Spaceship bruh = new Spaceship();
+ Star[] sky = new Star[400];
 public void setup()
 {
   size(600,600);
+  for(int i = 0; i<sky.length;i++) {
+    sky[i] = new Star();
+  }
 }
 public void draw()
 {
   background(0);
- 
+   for(int i = 0; i<sky.length;i++) {
+    sky[i].show();
+  }
  
   if(keyPressed) {
     if (key == 'a') {
