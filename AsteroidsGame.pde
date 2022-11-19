@@ -28,11 +28,17 @@ public void draw()
     if (key == 's') {
       bruh.accelerate(-0.15);
     }
+    
   }
   bruh.move();
   bruh.show();
 }
 public void keyPressed() {
- 
+ if (key == 'h') {
+      bruh.setXspeed(0);
+      bruh.setYspeed(0);
+      bruh.setXcenter((Math.random()*550));
+      bruh.setYcenter((Math.random()*550));
+    }
  
 }
