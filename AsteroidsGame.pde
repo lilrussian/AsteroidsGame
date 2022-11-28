@@ -1,4 +1,4 @@
- Spaceship bruh = new Spaceship();
+Spaceship bruh = new Spaceship();
  Star[] sky = new Star[400];
 public void setup()
 {
@@ -39,6 +39,7 @@ public void keyPressed() {
       bruh.setYspeed(0);
       bruh.setXcenter((Math.random()*550));
       bruh.setYcenter((Math.random()*550));
+      bruh.setDirection((Math.random()*360));
     }
  
 }
