@@ -1,11 +1,17 @@
 Spaceship bruh = new Spaceship();
  Star[] sky = new Star[400];
+ 
+ ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
+
 public void setup()
 {
   size(600,600);
   for(int i = 0; i<sky.length;i++) {
     sky[i] = new Star();
   }
+  for (int i=0; i< 13; i++){
+      rock.add(new Asteroid());
+   }
 }
 public void draw()
 {
@@ -13,7 +19,18 @@ public void draw()
    for(int i = 0; i<sky.length;i++) {
     sky[i].show();
   }
- 
+   for(int i = 0; i < rock.size(); i++){
+      rock.get(i).show();
+      rock.get(i).move();
+      float distance = dist(bruh.getX(), bruh.getY(), rock.get(i).getX(), rock.get(i).getY());
+      if (distance < 30)
+        rock.remove(i);
+    }
+    
+    
+  bruh.move();
+  bruh.show();
+  
   if(keyPressed) {
     if (key == 'a') {
     bruh.turn(-6.5);
@@ -30,8 +47,7 @@ public void draw()
     }
     
   }
-  bruh.move();
-  bruh.show();
+  
 }
 public void keyPressed() {
  if (key == 'h') {
